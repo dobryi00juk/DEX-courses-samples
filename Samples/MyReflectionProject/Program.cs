@@ -10,7 +10,8 @@ namespace MyReflectionProject
     {
         static void Main(string[] args)
         {
-            Assembly assembly = Assembly.LoadFrom("E:\\Projects\\course-samples-master\\Samples\\Stage1\\bin\\Debug\\Stage1.dll");
+            //требуется указать полный путь к сборке
+            Assembly assembly = Assembly.LoadFrom("D:\\Projects\\DEX-courses-samples-master\\Samples\\Stage1\\bin\\Debug\\Stage1.dll");
 
             Type type = assembly.GetType("Stage1.MyOopTest+House", false, true);
 
@@ -26,14 +27,14 @@ namespace MyReflectionProject
 
             var propertyValue = (bool) prop.GetValue(obj);
 
-            Console.WriteLine(propertyValue.ToString());
+            Console.WriteLine("Значение свойства: " + propertyValue.ToString());
 
             Type ctype = typeof(Program);
             var ctors = ctype.GetConstructors();
 
             foreach (var item in ctors)
             {
-                Console.WriteLine(item.DeclaringType);
+                Console.WriteLine("Конструктор для типа: " + item.DeclaringType);
             }
         }
     }

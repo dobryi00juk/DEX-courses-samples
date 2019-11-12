@@ -68,7 +68,7 @@
     <Compile Include="QueryableLinqTest.cs" />
     <Compile Include="ReflectionTest.cs" />
     <Compile Include="RegularExpressionTests.cs" />
-    <Compile Include="SerializationTest.cs" />
+    <Compile Include="MySerializationTest.cs" />
     <Compile Include="ThreadsTest.cs" />
     <Compile Include="TypeConversionTests.cs" />
     <Compile Include="ValueAndReferenceTypeTests.cs" />
