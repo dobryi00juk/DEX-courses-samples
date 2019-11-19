@@ -49,7 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BoxingUnboxingTests.cs" />
+    <Compile Include="MyBoxingUnboxingTests.cs" />
     <Compile Include="MyComparableTest.cs" />
     <Compile Include="DictionaryTests.cs" />
     <Compile Include="DisposableTests.cs" />
@@ -71,7 +71,7 @@
     <Compile Include="MySerializationTest.cs" />
     <Compile Include="ThreadsTest.cs" />
     <Compile Include="TypeConversionTests.cs" />
-    <Compile Include="ValueAndReferenceTypeTests.cs" />
+    <Compile Include="MyValueAndReferenceTypeTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

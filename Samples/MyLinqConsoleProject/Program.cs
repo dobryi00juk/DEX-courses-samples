@@ -18,7 +18,6 @@ namespace MyLinqConsoleProject
             {
                 beers.Add(new Beer(i, rand.Next(10, 50), "Bavaria",date.AddMonths(rand.Next(-3, 4)), 30));
             }
-
             var query1 = beers.Where(x => x.Price < 40).GroupBy(x =>x.Expired).OrderBy(x=>x.Key);
 
             foreach (IGrouping<bool, Beer> item in query1)

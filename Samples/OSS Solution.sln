@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyLinqConsoleProject", "MyL
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyListDictionaryProject", "MyListDictionaryProject\MyListDictionaryProject.csproj", "{FA1A9083-5F47-4F37-BC5F-8A61326DE148}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyReflectionProject", "MyReflectionProject\MyReflectionProject.csproj", "{D5ECE54B-707C-4CE4-8878-3DB5B314DED4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyReflectionProject", "MyReflectionProject\MyReflectionProject.csproj", "{D5ECE54B-707C-4CE4-8878-3DB5B314DED4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyThredingProject", "MyThredingProject\MyThredingProject.csproj", "{DA0DC2DD-F642-4E02-8C58-6EA5F8F045D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{D5ECE54B-707C-4CE4-8878-3DB5B314DED4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5ECE54B-707C-4CE4-8878-3DB5B314DED4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5ECE54B-707C-4CE4-8878-3DB5B314DED4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA0DC2DD-F642-4E02-8C58-6EA5F8F045D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA0DC2DD-F642-4E02-8C58-6EA5F8F045D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA0DC2DD-F642-4E02-8C58-6EA5F8F045D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA0DC2DD-F642-4E02-8C58-6EA5F8F045D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
