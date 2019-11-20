@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyReflectionProject", "MyRe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyThredingProject", "MyThredingProject\MyThredingProject.csproj", "{DA0DC2DD-F642-4E02-8C58-6EA5F8F045D3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyEventProject", "MyEventProject\MyEventProject.csproj", "{2D52AD09-982B-4987-8965-A75F50DF754F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{DA0DC2DD-F642-4E02-8C58-6EA5F8F045D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA0DC2DD-F642-4E02-8C58-6EA5F8F045D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA0DC2DD-F642-4E02-8C58-6EA5F8F045D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D52AD09-982B-4987-8965-A75F50DF754F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D52AD09-982B-4987-8965-A75F50DF754F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D52AD09-982B-4987-8965-A75F50DF754F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D52AD09-982B-4987-8965-A75F50DF754F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
