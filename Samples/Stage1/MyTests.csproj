@@ -58,7 +58,7 @@
     <Compile Include="EqualsAndHashCodeStructTests.cs" />
     <Compile Include="EventTest.cs" />
     <Compile Include="ExceptionHandlingTests.cs" />
-    <Compile Include="ExtensionTests.cs" />
+    <Compile Include="MyExtensionTests.cs" />
     <Compile Include="ExpressionTests.cs" />
     <Compile Include="FactoryTests.cs" />
     <Compile Include="GenericTest.cs" />
