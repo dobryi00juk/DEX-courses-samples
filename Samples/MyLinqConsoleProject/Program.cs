@@ -40,33 +40,4 @@ namespace MyLinqConsoleProject
             Console.ReadKey();
         }
     }
-
-    internal abstract class Product
-    {
-        public string Name { get; set; }
-        public int Id { get; set; }
-        public int Price { get; set; }
-
-        protected Product(int id, int price, string name)
-        {
-            Id = id;
-            Price = price;
-            Name = name;
-        }
-    }
-
-    internal class Beer : Product
-    {
-        public DateTime ProductionTime { get; set; }
-        public int ExpirationTime { get; set; }//days
-        public bool Expired { get; set; }
-
-        public Beer(int id, int price, string name, DateTime productionTime, int expirationTime) : base(id, price, name)
-        {
-            ProductionTime = productionTime;
-            ExpirationTime = expirationTime;
-
-            Expired = productionTime.AddDays(expirationTime) < DateTime.Now ? true : false;
-        }
-    }
 }

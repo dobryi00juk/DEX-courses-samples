@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -10,83 +8,22 @@ namespace MyThredingProject
     {
         static void Main(string[] args)
         {
-            var jobs = new JobExecuter(10);
-            jobs.Start(15);
-        }
-        
-    }
+            var executor = new JobExecuter(10);
+            Random r = new Random();
 
-    interface IJobExecuter
-    {
-        int Amount { get; }
-        void Start(int maxConcurrent);
-        void Stop();
-        void Add(Action action);
-        void Clear();
-    }
-
-    class JobExecuter : IJobExecuter
-    {
-        public int Amount { get; }
-        public JobExecuter(int amount)
-        {
-            Amount = amount;
-        }
-
-        public void Start(int maxConcurrent)
-        {
-            var messages = new List<string>()
+            for (int i = 0; i < executor.Amount; i++)
             {
-                "message 1",
-                "message 2",
-                "message 3",
-                "message 4",
-                "message 5",
-                "message 6"
-            };
-
-            using (SemaphoreSlim semaphore = new SemaphoreSlim(Amount, maxConcurrent))
-            {
-                Queue<Task> tasks = new Queue<Task>();
-
-                foreach (var item in messages)
+                executor.Add(() =>
                 {
-                    semaphore.Wait();
-                    var t = Task.Factory.StartNew(() =>
-                    {
-                        try
-                        {
-                            Process(item);
-                        }
-                        finally
-                        {
-                            semaphore.Release();
-                        }
-                    });
-
-                    //tasks.Add(t);
-                }
+                    Console.WriteLine($"Current time {DateTime.Now}");
+                    Thread.Sleep(r.Next(200, 1000));
+                });
             }
 
-            Console.ReadKey();
-        }
-
-        public void Stop() { }
-
-        public void Add(Action action)
-        {
-        }
-        public void Clear()
-        {
-            Console.WriteLine();
-        }
-
-        public static void Process(string msg)
-        {
-            Thread.Sleep(2000);
-            Console.WriteLine(msg);
-            var _ts = new BlockingCollection<Action>(); 
+            executor.Start(3);
+            executor.Stop();
+            Task.WaitAll();
+            Console.WriteLine("Main thread exits");
         }
     }
-
 }
