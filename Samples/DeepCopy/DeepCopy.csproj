@@ -6,7 +6,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Compile Remove="test.cs" />
+      <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="DeepCopy.csproj.DotSettings" />
     </ItemGroup>
 
 </Project>

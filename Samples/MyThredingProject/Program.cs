@@ -8,22 +8,56 @@ namespace MyThredingProject
     {
         static void Main(string[] args)
         {
-            var executor = new JobExecuter(10);
-            Random r = new Random();
+            var executor = new JobExecuter(20);
+            var r = new Random();
 
-            for (int i = 0; i < executor.Amount; i++)
+            ThreadPool.GetMaxThreads(out var nWorkerThreads, out var nCompletionThreads);
+            Console.WriteLine("Максимальное количество потоков: " + nWorkerThreads
+                                                                  + "\nПотоков ввода-вывода доступно: " + nCompletionThreads);
+            
+            try
             {
-                executor.Add(() =>
+                for (var i = 0; i < 50; i++)
                 {
-                    Console.WriteLine($"Current time {DateTime.Now}");
-                    Thread.Sleep(r.Next(200, 1000));
-                });
+                    //if (i >= executor.Amount) break;
+
+                    ThreadPool.QueueUserWorkItem(_ =>
+                    {
+                        executor.Add(() =>
+                        {
+                            Console.WriteLine("Thread ID : {0}", Thread.CurrentThread.ManagedThreadId);
+                        });
+                    });
+                }
+                Thread.Sleep(1000);
+            }
+            catch (ArgumentNullException e)
+            {
+                Console.WriteLine(e.Message);
             }
 
-            executor.Start(3);
+            try
+            {
+                executor.Start(4);
+            }
+            catch (ArgumentNullException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
             executor.Stop();
-            Task.WaitAll();
-            Console.WriteLine("Main thread exits");
+
+            executor.Add(() => Console.WriteLine("Action 1"));
+            executor.Add(() => Console.WriteLine("Action 2"));
+            executor.Add(() => Console.WriteLine("Action 3"));
+            executor.Add(() => Console.WriteLine("Action 4"));
+            executor.Add(() => Console.WriteLine("Action 5"));
+            
+            executor.Start(3);
+            
+            executor.Clear();
+            executor.Start(3);
+            //Thread.Sleep(5000);
         }
     }
 }

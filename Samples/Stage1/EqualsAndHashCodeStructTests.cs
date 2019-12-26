@@ -40,7 +40,7 @@ namespace Stage1
         }
     }
 
-    class Name
+    internal class Name
     {
         public string Value { get; set; }
 
@@ -54,6 +54,11 @@ namespace Stage1
 
             var name = (Name) obj;
             return name.Value == Value;
+        }
+
+        public override int GetHashCode()
+        {
+            return this.Value.Length;
         }
     }
 }

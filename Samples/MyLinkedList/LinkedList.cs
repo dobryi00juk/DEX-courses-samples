@@ -14,12 +14,6 @@ namespace MyLinkedList
 
         public void Add(T item)
         {
-            if(item == null)
-            {
-                Console.WriteLine("Error!");
-                return;
-            }
-
             var element = new Element<T>(item);
             var current = _head;
 
@@ -54,8 +48,6 @@ namespace MyLinkedList
 
         public bool Delete(T item)
         {
-            if(item == null) return false;
-
             var current = _head;
 
             while (current != null)
